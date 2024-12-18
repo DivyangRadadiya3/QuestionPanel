@@ -84,7 +84,7 @@ const Header = () => {
       </header>
       <div
         className={`${
-          isMenuOpen === true
+          isMenuOpen
             ? "block lg:hidden w-full h-48 px-4 py-6 bg-slate-200 border-b shadow-default transition duration-150 ease-in-out opacity-100 translate-y-0"
             : "hidden opacity-0 -translate-y-full"
         }`}
@@ -92,7 +92,7 @@ const Header = () => {
       >
         <nav className="flex flex-col h-full overflow-y-auto duration-300 ease-linear ">
           <ul className="flex flex-col gap-1.5">
-            <li>
+            <li onClick={toggleMenu}>
               <NavLink
                 to="/"
                 className={`${
@@ -102,7 +102,7 @@ const Header = () => {
                 Dashboard
               </NavLink>
             </li>
-            <li>
+            <li onClick={toggleMenu}>
               <NavLink
                 to="/subjects"
                 className={`${
@@ -117,7 +117,7 @@ const Header = () => {
                 Add Question
               </NavLink>
             </li>
-            <li>
+            <li onClick={toggleMenu}>
               <NavLink
                 to="/student"
                 className={` ${

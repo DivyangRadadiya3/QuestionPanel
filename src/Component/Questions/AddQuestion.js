@@ -19,8 +19,8 @@ import EnglishQueStatementBaseform from "./QuestionType/Add/EnglishQuestionBase/
 import NormalquestionBaseForm from "./QuestionType/Add/EnglishQuestionBase/NormalQuestionBaseForm";
 import NormalHindQueBaseForm from "./QuestionType/Add/HindiQuestionBase/NormalHindQueBaseForm";
 import HindiQueStatementBaseform from "./QuestionType/Add/HindiQuestionBase/HindiQueStatementBaseform";
-import { addNewQuestion } from "../../Hooks/QuestionsApi";
-import { fetchData } from "../../Hooks/getSubjectApi";
+import { addNewQuestion } from "../../ApiHandler/QuestionsApi";
+import { fetchData } from "../../ApiHandler/getSubjectApi";
 import Loading from "../Loader/Loading";
 
 function AddQuestion() {

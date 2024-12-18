@@ -1,10 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchUserList } from "./userAPI";
+import { fetchUserList } from "../users/userAPI";
 import axios from "axios";
 import { toast } from "react-toastify";
-
 import {
-  convertIscToUtc,
   convertIstToUtc,
   convertUtcToIst,
 } from "../../Utils/timeUtils";
@@ -85,6 +83,6 @@ const userSlice = createSlice({
         state.error = action?.error?.message || "Something went wrong!";
       });
   },
-});
+}); 
 
 export default userSlice.reducer;

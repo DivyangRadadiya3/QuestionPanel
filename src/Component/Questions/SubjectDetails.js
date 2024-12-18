@@ -21,8 +21,8 @@ import {
   deleteExistQuestion,
   fetchQuestionsBySubject,
   getQuestionData,
-} from "../../Hooks/QuestionsApi";
-import { fetchSubjects } from "../../Hooks/getSubjectApi";
+} from "../../ApiHandler/QuestionsApi";
+import { fetchSubjects } from "../../ApiHandler/getSubjectApi";
 
 function SubjectDetails() {
   const navigate = useNavigate();

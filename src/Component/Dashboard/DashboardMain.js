@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard";
 import ContestwiseEarn from "./ContestwiseEarn";
 import Privacy from "./Privacy";
 import OtpVerify from "../OtpVerify/OtpVerify";
-import { fetchDashboardData } from "../../Hooks/dashboardService";
+import { fetchDashboardData } from "../../ApiHandler/dashboardService";
 import { useSelector } from "react-redux";
 import Loading from "../Loader/Loading";
 

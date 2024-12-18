@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { resetPasswordApiCall } from "../../Hooks/resetPassword";
+import { resetPasswordApiCall } from "../../ApiHandler/resetPassword";
 import { loginAdmin } from "../../Context/Action/index";
 
 export default function PasswordUpdate() {

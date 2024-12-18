@@ -5,12 +5,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
+// import Store from "./Redux/store/store"
 import Store from "./Context/Store/Store";
-// import store from './app/store';
 // Store.subscribe(() => console.log(Store.getState()));
+
 const Root = () => {
   const value = useMemo(() => Store, []);
-
   return (
     <Provider store={value}>
       <App />
@@ -18,17 +18,17 @@ const Root = () => {
   );
 };
 
-// Create the root element and render the application
-const root = ReactDOM.createRoot(document.getElementById("root")); // Ensure there's an element with id="root" in your index.html
+const root = ReactDOM.createRoot(document.getElementById("root")); 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+      }}
+    >
       <Root />
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

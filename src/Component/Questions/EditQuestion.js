@@ -13,8 +13,8 @@ import NormalquestionBaseForm from "./QuestionType/Edit/EnglishQuestionBase/Norm
 import NormalHindQueBaseForm from "./QuestionType/Edit/HindiQuestionBase/NormalHindQueBaseForm";
 import HindiQueStatementBaseform from "./QuestionType/Edit/HindiQuestionBase/HindiQueStatementBaseform";
 import MultipleSelect from "../Ui/MultiSelection";
-import { fetchData } from "../../Hooks/getSubjectApi";
-import { editQuestionAPI } from "../../Hooks/QuestionsApi";
+import { fetchData } from "../../ApiHandler/getSubjectApi";
+import { editQuestionAPI } from "../../ApiHandler/QuestionsApi";
 import Loading from "../Loader/Loading";
 
 function EditQuestion() {

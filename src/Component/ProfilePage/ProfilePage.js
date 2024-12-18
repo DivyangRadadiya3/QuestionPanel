@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { VscSaveAs } from "react-icons/vsc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { updateProfile } from "../../Hooks/updateProfileApi";
+import { updateProfile } from "../../ApiHandler/updateProfileApi";
 import { loginAdmin } from "../../Context/Action";
-import { imgUpload } from "../../Hooks/updateImage";
+import { imgUpload } from "../../ApiHandler/updateImage";
 import Loading from "../Loader/Loading";
 import { useNavigate } from "react-router-dom";
 

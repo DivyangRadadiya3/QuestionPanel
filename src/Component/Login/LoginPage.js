@@ -9,12 +9,12 @@ import "react-toastify/dist/ReactToastify.css";
 import OtpVerify from "../OtpVerify/OtpVerify";
 import axios from "axios";
 // import { loginAdmin, loginUser } from "../../Context/Action/index";
-import { handleLogin, verifyOtp } from "../../Hooks/authApi";
-import {
-  loginUser,
-  verifyOtpAction,
-  logout,
-} from "../../features/users/authSlice";
+import { handleLogin, verifyOtp } from "../../ApiHandler/authApi";
+// import {
+//   loginUser,
+//   verifyOtpAction,
+//   logout,
+// } from "../../features/users/authSlice";
 import { loginAdmin } from "../../Context/Action";
 
 function LoginPage() {

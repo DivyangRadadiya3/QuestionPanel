@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-export const fetchSubjects = async (token, classesId, page, dataLimit) => {
+export const fetchSubjects = async (token, classesId, page) => {
   try {
     let config = {
       method: "get",
@@ -20,7 +20,7 @@ export const fetchSubjects = async (token, classesId, page, dataLimit) => {
       config
     );
     const response2 = await axios.request(
-      `${BASE_URL}/subject/all?page=${page}&limit=${dataLimit}&classesFilter=${classesId}`,
+      `${BASE_URL}/subject/all?page=${page}&limit=10&classesFilter=${classesId}`,
       config
     );
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../Loader/Loading";
-import { fetchDashboardData } from "../../Hooks/dashboardService";
+import { fetchDashboardData } from "../../ApiHandler/dashboardService";
 import { useDispatch, useSelector } from "react-redux";
-import { editUseData, fetchUserList } from "../../Hooks/userDataService";
+import { editUseData, fetchUserList } from "../../ApiHandler/userDataService";
 import Pagination from "../Pagination/Pagination";
 import { toast } from "react-toastify";
-import { fetchUsers } from "../../features/users/userSlice";
+// import { fetchUsers } from "../../features/users/userSlice";
 
 function StudentPage() {
   const dispatch = useDispatch();
