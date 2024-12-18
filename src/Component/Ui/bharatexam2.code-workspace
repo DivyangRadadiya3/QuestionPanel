@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "bharatexam2",
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../instaclone-main/instaclone-main/frontend"
+		},
+		{
+			"path": "../../../../EasyLearn-master-main/EasyLearn-master-main"
+		}
+	],
+	"settings": {}
+}
