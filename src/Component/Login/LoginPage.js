@@ -7,14 +7,7 @@ import { loginSuccess } from "../../Context/Action/Auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import OtpVerify from "../OtpVerify/OtpVerify";
-import axios from "axios";
-// import { loginAdmin, loginUser } from "../../Context/Action/index";
 import { handleLogin, verifyOtp } from "../../ApiHandler/authApi";
-// import {
-//   loginUser,
-//   verifyOtpAction,
-//   logout,
-// } from "../../features/users/authSlice";
 import { loginAdmin } from "../../Context/Action";
 
 function LoginPage() {

@@ -37,23 +37,7 @@ function App() {
 
   return (
     <>
-      {/* {loading && <p>Loading users...</p>}
-      {error && <p>Error: {error}</p>}
-      {users && (
-        <DefaultLayout>
-          <Routes>
-            <Route exact path="/" element={<DashboardMain />} />
-            <Route path="/subjects" element={<SubjectPage />} />
-            <Route path="/subjectDetails" element={<SubjectDetails />} />
-            <Route path="/addQuestion" element={<AddQuestion />} />
-            <Route path="/editQuestion" element={<EditQuestion />} />
-            <Route path="/student" element={<StudentPage />} />
-            <Route path="/profileUpdate" element={<ProfilePage />} />
-            <Route exact path="/resetpassword" element={<PasswordUpdate />} />
-          </Routes>
-        </DefaultLayout>
-      )} */}
-
+    
       {loginInfo.isLoggedIn !== true ? (
         <div className="flex items-center justify-center min-h-screen overflow-hidden">
           <Suspense fallback={<Loading />}>
@@ -63,8 +47,8 @@ function App() {
       ) : loading ? (
         <Loading />
       ) : ( 
-        <DefaultLayout>
-          <Routes>
+        <DefaultLayout> 
+          <Routes>  
             <Route exact path="/" element={<DashboardMain />} />
             <Route path="/subjects" element={<SubjectPage />} />
             <Route path="/subjectDetails" element={<SubjectDetails />} />

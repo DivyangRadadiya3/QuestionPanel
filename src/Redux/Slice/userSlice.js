@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import {
   convertIstToUtc,
-  convertUtcToIst,
+  convertUtcToIsc,
 } from "../../Utils/timeUtils";
 
 const initialState = {
@@ -37,13 +37,13 @@ export const fetchUsers = createAsyncThunk(
         if (subjectData && Array.isArray(subjectData)) {
           subjectData = subjectData.map((item) => {
             if (item.createdAt) {
-              item.createdAt = convertUtcToIst(item.createdAt);
+              item.createdAt = convertUtcToIsc(item.createdAt);
             }
             if (item.updatedAt) {
-              item.updatedAt = convertUtcToIst(item.updatedAt);
+              item.updatedAt = convertUtcToIsc(item.updatedAt);
             }
             if (item.dob) {
-              item.dob = convertUtcToIst(item.dob);
+              item.dob = convertUtcToIsc(item.dob);
             }
             return item;
           });

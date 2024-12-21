@@ -1,5 +1,5 @@
 import axios from "axios";
-import { convertIscToUtc, convertUtcToIst } from "../Utils/timeUtils";
+import { convertIscToUtc, convertUtcToIsc } from "../Utils/timeUtils";
 import { toast } from "react-toastify";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -24,12 +24,12 @@ export const fetchDashboardData = async (token) => {
       const questionData = response.data;
 
       if (questionData) {
-        questionData.createdAt = convertUtcToIst(questionData.createdAt);
+        questionData.createdAt = convertUtcToIsc(questionData.createdAt);
 
-        questionData.updatedAt = convertUtcToIst(questionData.updatedAt);
+        questionData.updatedAt = convertUtcToIsc(questionData.updatedAt);
       }
 
-        // console.log("Converted Question Data:", questionData);
+        console.log("Converted Question Data:", questionData);
 
       return {
         success: true,

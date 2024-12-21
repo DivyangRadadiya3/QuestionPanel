@@ -1,5 +1,5 @@
 import axios from "axios";
-import { convertUtcToIst } from "../Utils/timeUtils";
+import { convertUtcToIsc } from "../Utils/timeUtils";
 import { toast } from "react-toastify";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -33,10 +33,10 @@ export const fetchSubjects = async (token, classesId, page) => {
           ...question,
         };
         if (question.createdAt) {
-          convertedQuestion.createdAt = convertUtcToIst(question.createdAt);
+          convertedQuestion.createdAt = convertUtcToIsc(question.createdAt);
         }
         if (question.updatedAt) {
-          convertedQuestion.updatedAt = convertUtcToIst(question.updatedAt);
+          convertedQuestion.updatedAt = convertUtcToIsc(question.updatedAt);
         }
         return convertedQuestion;
       });
@@ -48,10 +48,10 @@ export const fetchSubjects = async (token, classesId, page) => {
             ...subject,
           };
           if (subject.createdAt) {
-            convertedSubject.createdAt = convertUtcToIst(subject.createdAt);
+            convertedSubject.createdAt = convertUtcToIsc(subject.createdAt);
           }
           if (subject.updatedAt) {
-            convertedSubject.updatedAt = convertUtcToIst(subject.updatedAt);
+            convertedSubject.updatedAt = convertUtcToIsc(subject.updatedAt);
           }
           return convertedSubject;
         }),
@@ -102,10 +102,10 @@ export const fetchData = async (token, subject) => {
       const convertedSubTopics = subTopic.map((topic) => {
         const convertedTopic = { ...topic };
         if (topic.createdAt) {
-          convertedTopic.createdAt = convertUtcToIst(topic.createdAt);
+          convertedTopic.createdAt = convertUtcToIsc(topic.createdAt);
         }
         if (topic.updatedAt) {
-          convertedTopic.updatedAt = convertUtcToIst(topic.updatedAt);
+          convertedTopic.updatedAt = convertUtcToIsc(topic.updatedAt);
         }
         return convertedTopic;
       });
@@ -119,10 +119,10 @@ export const fetchData = async (token, subject) => {
       const convertedSubjects = subjectsResponseData.map((subjectData) => {
         const convertedSubject = { ...subjectData }; 
         if (subjectData.createdAt) {
-          convertedSubject.createdAt = convertUtcToIst(subjectData.createdAt);
+          convertedSubject.createdAt = convertUtcToIsc(subjectData.createdAt);
         }
         if (subjectData.updatedAt) {
-          convertedSubject.updatedAt = convertUtcToIst(subjectData.updatedAt);
+          convertedSubject.updatedAt = convertUtcToIsc(subjectData.updatedAt);
         }
         return convertedSubject;
       });

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import {
   convertIscToUtc,
   convertIstToUtc,
-  convertUtcToIst,
+  convertUtcToIsc,
 } from "../../Utils/timeUtils";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -30,13 +30,13 @@ export const fetchUserList = async (accessToken) => {
       if (subjectData && Array.isArray(subjectData)) {
         subjectData = subjectData.map((item) => {
           if (item.createdAt) {
-            item.createdAt = convertUtcToIst(item.createdAt);
+            item.createdAt = convertUtcToIsc(item.createdAt);
           }
           if (item.updatedAt) {
-            item.updatedAt = convertUtcToIst(item.updatedAt);
+            item.updatedAt = convertUtcToIsc(item.updatedAt);
           }
           if (item.dob) {
-            item.dob = convertUtcToIst(item.dob);
+            item.dob = convertUtcToIsc(item.dob);
           }
           return item;
         });

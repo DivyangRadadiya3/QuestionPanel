@@ -1,5 +1,5 @@
 import axios from "axios";
-import { convertIscToUtc, convertUtcToIst } from "../Utils/timeUtils";
+import { convertIscToUtc, convertUtcToIsc } from "../Utils/timeUtils";
 import { toast } from "react-toastify";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -31,16 +31,16 @@ export const fetchQuestionsBySubject = async (token, subjectId, classesId) => {
     const convertedQuestions = Questions.map((question) => {
       const convertedQuestion = { ...question };
       if (question.createdAt) {
-        convertedQuestion.createdAt = convertUtcToIst(question.createdAt);
+        convertedQuestion.createdAt = convertUtcToIsc(question.createdAt);
       }
       if (question.updatedAt) {
-        convertedQuestion.updatedAt = convertUtcToIst(question.updatedAt);
+        convertedQuestion.updatedAt = convertUtcToIsc(question.updatedAt);
       }
       if (question.startDate) {
-        convertedQuestion.startDate = convertUtcToIst(question.startDate);
+        convertedQuestion.startDate = convertUtcToIsc(question.startDate);
       }
       if (question.endDate) {
-        convertedQuestion.endDate = convertUtcToIst(question.endDate);
+        convertedQuestion.endDate = convertUtcToIsc(question.endDate);
       }
 
       return convertedQuestion;
@@ -50,10 +50,10 @@ export const fetchQuestionsBySubject = async (token, subjectId, classesId) => {
     const convertedSubTopics = subTopics.map((subTopic) => {
       const convertedSubTopic = { ...subTopic };
       if (subTopic.createdAt) {
-        convertedSubTopic.createdAt = convertUtcToIst(subTopic.createdAt);
+        convertedSubTopic.createdAt = convertUtcToIsc(subTopic.createdAt);
       }
       if (subTopic.updatedAt) {
-        convertedSubTopic.updatedAt = convertUtcToIst(subTopic.updatedAt);
+        convertedSubTopic.updatedAt = convertUtcToIsc(subTopic.updatedAt);
       }
 
       return convertedSubTopic;
@@ -94,10 +94,10 @@ export const getQuestionData = async (token, questionId) => {
       const questionData = response.data.data;
       if (questionData) {
         if (questionData.createdAt) {
-          questionData.createdAt = convertUtcToIst(questionData.createdAt);
+          questionData.createdAt = convertUtcToIsc(questionData.createdAt);
         }
         if (questionData.updatedAt) {
-          questionData.updatedAt = convertUtcToIst(questionData.updatedAt);
+          questionData.updatedAt = convertUtcToIsc(questionData.updatedAt);
         }
       }
       console.log("Converted Question Data:", questionData);
